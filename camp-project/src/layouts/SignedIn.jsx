@@ -1,15 +1,15 @@
 import React from "react";
 import { Dropdown, Menu, Image } from "semantic-ui-react";
 
-export default function SignedIn() {
+export default function SignedIn({signOut}) {
   return (
     <div>
       <Menu.Item>
-        <Image avatar spaced="right" src="https://www.istockphoto.com/tr/foto%C4%9Fraf/bir-clear-night-stok-foto%C4%9Fraf-%C3%BCzerinde-full-moon-gm1182564329-332116929" />
-        <Dropdown>
+        <Image avatar spaced="right" src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png"/>
+        <Dropdown pointing="top-left" text="Meral">
           <Dropdown.Menu>
             <Dropdown.Item text="Bilgilerim" icon="info" />
-            <Dropdown.Item text="Çıkış Yap" icon="info" />
+            <Dropdown.Item onClick={signOut} text="Çıkış Yap" icon="sign-out" />
           </Dropdown.Menu>
         </Dropdown>
       </Menu.Item>

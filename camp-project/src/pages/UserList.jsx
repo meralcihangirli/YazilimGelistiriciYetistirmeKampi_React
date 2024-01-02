@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Icon, Menu, Table } from "semantic-ui-react";
 import UserService from "../services/userService";
+import { Link } from 'react-router-dom';
 
 export default function UserList() {
   const [users, setUsers] = useState([]);
@@ -28,7 +29,7 @@ export default function UserList() {
           {
             users.map(user=>(
               <Table.Row key={user.id}> 
-            <Table.Cell>{user.name}</Table.Cell>
+            <Table.Cell><Link to={`/users/${user.name}`}>{user.name}</Link></Table.Cell>
             <Table.Cell>{user.username}</Table.Cell>
             <Table.Cell>{user.email}</Table.Cell>
            
